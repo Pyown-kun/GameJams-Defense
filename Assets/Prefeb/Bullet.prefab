@@ -163,4 +163,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 6
   lifeTime: 6
+  bulletDamage: 20
   target: {fileID: 0}

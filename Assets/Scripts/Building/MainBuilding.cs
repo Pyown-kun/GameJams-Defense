@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainBuilding : MonoBehaviour
@@ -11,6 +12,7 @@ public class MainBuilding : MonoBehaviour
 
     [SerializeField] private float buildingMaxHealth;
     [SerializeField] private float buildingHealth;
+
 
     private void Start()
     {
@@ -21,7 +23,7 @@ public class MainBuilding : MonoBehaviour
     {
         if (buildingHealth <= 0)
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene(2);
         }
     }
 

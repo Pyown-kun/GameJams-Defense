@@ -6,6 +6,7 @@ public class BulletScripts : MonoBehaviour
 {
     [SerializeField] private float bulletSpeed;
     [SerializeField] private float lifeTime;
+    [SerializeField] private float bulletDamage;
     [SerializeField] private Transform target;
 
     private Rigidbody2D rb;
@@ -24,6 +25,8 @@ public class BulletScripts : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            playerHealth.TakeEnemyDamage(bulletDamage);
             Destroy(gameObject);
         }
     }
