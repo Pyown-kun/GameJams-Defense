@@ -56,6 +56,15 @@ public class PlayerControls : MonoBehaviour
     private void Attack()
     {
         animator.SetTrigger("IsAttack");
+        StartCoroutine(AttackColliderActive());
+    }
+
+    private IEnumerator AttackColliderActive()
+    {
+        yield return new WaitForSeconds(0.2f);
+        attactCollider.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        attactCollider.gameObject.SetActive(false);
     }
 
     private void Move()
