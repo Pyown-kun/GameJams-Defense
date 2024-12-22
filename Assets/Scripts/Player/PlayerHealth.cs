@@ -28,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             AudioManager.Instance.GamePlayBGM.Stop();
+            AudioManager.Instance.GameOverBGM.Play();
             SceneManager.LoadScene(2);
         }
     }

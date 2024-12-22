@@ -24,6 +24,7 @@ public class MainBuilding : MonoBehaviour
         if (buildingHealth <= 0)
         {
             AudioManager.Instance.GamePlayBGM.Stop();
+            AudioManager.Instance.GameOverBGM.Play();
             SceneManager.LoadScene(2);
         }
     }

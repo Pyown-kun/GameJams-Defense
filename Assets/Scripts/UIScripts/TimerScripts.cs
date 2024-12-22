@@ -52,6 +52,7 @@ public class TimerScripts : MonoBehaviour
         if (secondTimer <= 0)
         {
             AudioManager.Instance.GamePlayBGM.Stop();
+            AudioManager.Instance.VictoryBGM.Play();
             SceneManager.LoadScene(3);
         }
     }

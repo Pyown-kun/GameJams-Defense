@@ -43,6 +43,7 @@ public class PauseManager : MonoBehaviour
 
     public void Resume()
     {
+        AudioManager.Instance.PressButton.Play();
         Time.timeScale = 1;
         PauseUI.SetActive(false);
         IsPause = false;

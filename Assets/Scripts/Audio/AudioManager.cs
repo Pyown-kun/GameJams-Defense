@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour
     [Header("BGM")]
     public AudioSource MainMenuBGM;
     public AudioSource GamePlayBGM;
+    public AudioSource VictoryBGM;
+    public AudioSource GameOverBGM;
 
     [Header("SFX")]
     public AudioSource SwordSlash;

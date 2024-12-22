@@ -21,6 +21,8 @@ public class GameOverManager : MonoBehaviour
         SceneManager.LoadScene(0);
 
         AudioManager.Instance.GamePlayBGM.Stop();
+        AudioManager.Instance.VictoryBGM.Stop();
+        AudioManager.Instance.GameOverBGM.Stop();
         AudioManager.Instance.MainMenuBGM.Play();
     }
     
@@ -28,6 +30,7 @@ public class GameOverManager : MonoBehaviour
     {
         AudioManager.Instance.PressButton.Play();
         AudioManager.Instance.GamePlayBGM.Play();
+        AudioManager.Instance.GameOverBGM.Stop();
         SceneManager.LoadScene(1);
     }
 
