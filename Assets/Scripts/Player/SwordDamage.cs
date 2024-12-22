@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SwordDamage : MonoBehaviour
 {
-    [SerializeField] private int damage = 80;
+    public PlayerControls playerControls;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemy")
         {
             EnemyHealth enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
-            enemyHealth.TakeDamage(damage);
+            enemyHealth.TakeDamage(playerControls.damage);
         }
     }
 }

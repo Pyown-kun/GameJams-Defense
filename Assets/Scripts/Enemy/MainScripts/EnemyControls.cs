@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyControls : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
+    public float MoveSpeed;
     [SerializeField] private Transform target;
 
     private float distance;
@@ -19,7 +19,7 @@ public class EnemyControls : MonoBehaviour
         distance = Vector2.Distance(transform.position, target.position);
         Vector2 directiion = target.position - transform.position;
 
-        transform.position = Vector2.MoveTowards(this.transform.position, target.position, moveSpeed* Time.fixedDeltaTime);
+        transform.position = Vector2.MoveTowards(this.transform.position, target.position, MoveSpeed* Time.fixedDeltaTime);
     }
 
 }

@@ -23,6 +23,7 @@ public class MainBuilding : MonoBehaviour
     {
         if (buildingHealth <= 0)
         {
+            AudioManager.Instance.GamePlayBGM.Stop();
             SceneManager.LoadScene(2);
         }
     }

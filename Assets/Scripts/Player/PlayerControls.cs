@@ -6,6 +6,8 @@ using UnityEngine.UIElements;
 
 public class PlayerControls : MonoBehaviour
 {
+    public PauseManager PauseManager;
+    public int damage = 80;
     [SerializeField] private float moveSpeed;
     [SerializeField] private Transform attactCollider;
 
@@ -55,8 +57,13 @@ public class PlayerControls : MonoBehaviour
 
     private void Attack()
     {
-        animator.SetTrigger("IsAttack");
-        StartCoroutine(AttackColliderActive());
+        if (!PauseManager.IsPause)
+        {
+            animator.SetTrigger("IsAttack");
+            StartCoroutine(AttackColliderActive());
+            //AudioManager.instance.SwordSlash.mute = true;
+            AudioManager.Instance.SwordSlash.Play();
+        }
     }
 
     private IEnumerator AttackColliderActive()

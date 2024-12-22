@@ -6,6 +6,7 @@ public class EnemySpawnPoint : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemyPrefeb;
 
+    [SerializeField] private float StartSpawnTime;
     [SerializeField] private float minSpawnTime;
     [SerializeField] private float maxSpawnTime;
 
@@ -14,7 +15,7 @@ public class EnemySpawnPoint : MonoBehaviour
 
     private void Awake()
     {
-        SetTimeSpawn();
+        spawnTime = StartSpawnTime;
         SetRandomSpawn();
     }
 
